@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="pt-12 lg:pt-0 px-4 bg-[#1650d0] pb-36 dark:bg-[#051139]">
-        <h1 class="text-lg font-thin text-white  pt-12 lg:pl-4">EDIT REGISTERED STAFF</h1>
+        <h1 class="text-lg font-thin text-white  pt-12 lg:pl-4 uppercase">EDIT Teacher</h1>
     </div>
     @include('layouts.message')
     <div class="pb-8 p-4 bg-white dark:bg-[#111c44] rounded-xl shadow-md -mt-28  mx-3 lg:mx-5">

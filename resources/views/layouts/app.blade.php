@@ -186,6 +186,14 @@
                         </li>
                     </a>
 
+                    <a href="{{ route('notice.index') }}">
+                        <li
+                            class="text-xl font-medium mt-2  p-2  flex items-center dark:text-gray-100 gap-2   hover:bg-gradient-to-r hover:from-[#1650d0] hover:to-[#264381]  hover:text-white  hover:rounded-md hover:shadow-md hover:shadow-blue-200 hover:dark:shadow-gray-600  @if (request()->routeIs('notice.*')) bg-gradient-to-r from-[#1650d0] to-[#264381] text-white  rounded-md shadow-md shadow-blue-200 dark:shadow-gray-600 @endif">
+                            <i class="ri-discuss-fill text-2xl"></i>
+                            <span class="text-sm font-thin">Notices</span>
+                        </li>
+                    </a>
+
 
                     <li>
                         <form action="{{ route('logout') }}" method="POST">

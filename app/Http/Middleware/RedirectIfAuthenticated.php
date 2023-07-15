@@ -26,7 +26,7 @@ class RedirectIfAuthenticated
                 } elseif (Auth::user()->role === 'Teacher'  && Auth::user()->status === 'Approved') {
                     return redirect(RouteServiceProvider::HOME);
                 } elseif (Auth::user()->role == 'Student' && Auth::user()->status == 'Approved') {
-                    return redirect(route('home'));
+                    return redirect(route('studentHome'));
                 } else {
                     $status = Auth::user()->status;
                     Auth::guard('web')->logout();

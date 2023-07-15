@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="pt-12 lg:pt-0 px-4 bg-[#1650d0] pb-36 dark:bg-[#051139]">
-        <h1 class="text-lg font-thin text-white  pt-12 lg:pl-4">Students</h1>
+        <h1 class="text-lg font-thin text-white  pt-12 lg:pl-4 uppercase">Students</h1>
         <div class="mt-6 flex items-center gap-2 justify-end">
             <a href="{{ route('student.index', 'Pending') }}"
                 @if (request()->status == 'Pending') class="bg-green-600 text-white hover:bg-white hover:text-black shadow-md duration-1000 rounded-xl py-1 px-4 "
