@@ -23,7 +23,7 @@ class RedirectIfAuthenticated
             if (Auth::guard($guard)->check()) {
                 if (Auth::user()->role === 'Superadmin' && Auth::user()->status === 'Approved') {
                     return redirect(RouteServiceProvider::HOME);
-                } elseif (Auth::user()->role === 'Teacher'  && Auth::user()->status == 'Approved') {
+                } elseif (Auth::user()->role === 'Teacher'  && Auth::user()->status === 'Approved') {
                     return redirect(RouteServiceProvider::HOME);
                 } elseif (Auth::user()->role == 'Student' && Auth::user()->status == 'Approved') {
                     return redirect(route('home'));
