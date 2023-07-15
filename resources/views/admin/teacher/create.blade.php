@@ -4,8 +4,8 @@
         <h1 class="text-lg font-thin text-white pt-12 lg:pl-4">REGISTER</h1>
     </div>
     @include('layouts.message')
-    <div class="pb-8 p-4 bg-white dark:bg-[#111c44] rounded-xl shadow-md -mt-28 mx-3 lg:mx-5 flex justify-center">
-        <form class="my-4 w-full lg:w-[32rem] px-2 xl:px-0" method="POST" action="{{ route('teacher.store') }}">
+    <div class="pb-8 p-4 bg-white dark:bg-[#111c44] rounded-xl shadow-md -mt-28 mx-3 lg:mx-5 ">
+        <form method="POST" action="{{ route('teacher.store') }}">
             @csrf
             <div class="py-2">
                 <label for="name">Name</label>

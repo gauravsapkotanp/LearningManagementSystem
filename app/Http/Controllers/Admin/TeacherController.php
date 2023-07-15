@@ -34,6 +34,7 @@ class TeacherController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -43,6 +44,8 @@ class TeacherController extends Controller
             'status' => $request->status,
             'password' => Hash::make($request->password),
         ]);
+
+
 
         event(new Registered($user));
         return redirect(route('teacher.index'))->with('success', 'Registered Successfully');

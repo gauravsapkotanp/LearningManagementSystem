@@ -41,7 +41,7 @@
             <div class="mt-4 flex justify-center">
                 <button type="submit" name="submit"
                     class="bg-blue-700 hover:bg-transparent border-2 hover:border-blue-700 hover:text-blue-700 duration-1000 py-2.5 mx-2 w-24 text-xs  font-bold text-white shadow-md shadow-indigo-200 hover:shadow-sm dark:shadow-gray-600 rounded-full cursor-pointer">Update</button>
-                <a href="{{ route('Teacher.index') }}"
+                <a href="{{ route('teacher.index') }}"
                     class="bg-[#F70000] hover:bg-transparent border-2 hover:border-[#F70000] hover:text-[#F70000] duration-1000 py-2.5 mx-2 w-24 text-xs text-center font-bold text-white shadow-md shadow-red-200  hover:shadow-sm dark:shadow-gray-600 rounded-full cursor-pointer">Exit</a>
             </div>
         </form>
