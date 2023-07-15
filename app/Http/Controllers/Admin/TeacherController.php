@@ -16,15 +16,15 @@ class TeacherController extends Controller
         return view('admin.teacher.create');
     }
 
-    public function index()
+    public function index($status)
     {
-        $teachers = User::where('role', 'Teacher')->latest()->get();
+        $teachers = User::where([['role', 'Teacher'], ['status', $status]])->latest()->get();
         return view('admin.teacher.index', compact('teachers'));
     }
 
     public function store(Request $request)
     {
-        $request->validate([
+        $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'phone' => ['required', 'numeric'],
             'address' => ['required', 'string'],
@@ -48,7 +48,7 @@ class TeacherController extends Controller
 
 
         event(new Registered($user));
-        return redirect(route('teacher.index'))->with('success', 'Registered Successfully');
+        return redirect(route('teacher.index', $data['status']))->with('success', 'Registered Successfully');
     }
 
 
@@ -69,7 +69,7 @@ class TeacherController extends Controller
 
         $teacher = User::find($id);
         $teacher->update($data);
-        return redirect(route('teacher.index'))->with('success', 'Teacher  Updated Successfully');
+        return redirect(route('teacher.index', $teacher->status))->with('success', 'Teacher  Updated Successfully');
     }
 
     public function delete(Request $request)
@@ -77,5 +77,13 @@ class TeacherController extends Controller
         $teacher = User::find($request->input('dataid'));
         $teacher->delete();
         return back()->with('success', 'Teacher Deleted Succesfully');
+    }
+
+    public function status(Request $request)
+    {
+        $teacher = User::find($request->input('dataid'));
+        $teacher->status = $request->status;
+        $teacher->save();
+        return back()->with('success', 'Status change to ' . $teacher->status);
     }
 }
