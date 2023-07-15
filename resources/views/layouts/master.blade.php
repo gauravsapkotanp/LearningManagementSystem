@@ -75,7 +75,7 @@
                 @endphp
                 <button id="mypic">
                     <img class="w-12 h-12 rounded-full object-cover"
-                        src="{{ asset('profiles/' . $student->photopath) }}" alt="">
+                        src="{{ asset('img/profiles/' . $student->profile_photo) }}" alt="">
                 </button>
                 <div class="absolute right-2 top-12  w-60 pt-4 bg-white  shadow logoutbar hidden" id="dropDown">
 
@@ -91,7 +91,7 @@
                             </li>
                         </a>
 
-                        <a href="#">
+                        <a href="{{ route('studentProfile.edit') }}">
                             <li
                                 class="text-gray-700 px-4 py-2 border-b hover:bg-gray-200 hover:text-[#1650d0] flex items-center gap-x-2">
                                 <i class="ri-user-3-fill"></i>

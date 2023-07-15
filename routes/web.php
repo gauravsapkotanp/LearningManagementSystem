@@ -30,6 +30,10 @@ Route::middleware('auth')->group(function () {
     Route::middleware('student')->group(function () {
 
         Route::get('student/home', [FrontEndController::class, 'notice'])->name('studentHome');
+        // Profile
+        Route::get('student-profile', [FrontEndController::class, 'edit'])->name('studentProfile.edit');
+        Route::put('student-profile', [FrontEndController::class, 'update'])->name('studentProfile.update');
+        Route::put('change-password', [FrontEndController::class, 'updatePassword'])->name('studentPassword.update');
     });
 
     Route::middleware('teacher')->group(function () {
