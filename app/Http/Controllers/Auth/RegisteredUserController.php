@@ -32,30 +32,28 @@ class RegisteredUserController extends Controller
     {
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'phone' => ['required', 'numeric'],
             'address' => ['required', 'string'],
             'faculty' => ['required', 'string'],
             'role' => ['required', 'string'],
-            'profile_photo' => ['required'],
+            'profile_photo' => ['required', 'image'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+
         ]);
 
-        // Profile photo upload
-        if ($request->hasFile('profile_photo')) {
-            //file name with extentsion
-            $filenameWithExt_file = $request->file('profile_photo')->getClientOriginalName();
-            //only file name
-            $filename_file = pathinfo($filenameWithExt_file, PATHINFO_FILENAME);
-            //only extension
-            $extension_file = $request->file('profile_photo')->getClientOriginalExtension();
-            //file name to store
-            $file = $filename_file . '_' . time() . '.' . $extension_file;
-            //Move file to desired location
-            $path = $request->file('profile_photo')->move('img/profile_photo/', $file);
+        //file name with extentsion
+        $filenameWithExt_file = $request->file('profile_photo')->getClientOriginalName();
+        //only file name
+        $filename_file = pathinfo($filenameWithExt_file, PATHINFO_FILENAME);
+        //only extension
+        $extension_file = $request->file('profile_photo')->getClientOriginalExtension();
+        //file name to store
+        $file = $filename_file . '_' . time() . '.' . $extension_file;
+        //Move file to desired location
+        $path = $request->file('profile_photo')->move('img/profiles/', $file);
 
-            $data['profile_photo'] = $file;
-        }
+        $data['profile_photo'] = $file;
 
         $user = User::create([
             'name' => $request->name,
@@ -67,6 +65,8 @@ class RegisteredUserController extends Controller
             'profile_photo' => $data['profile_photo'],
             'password' => Hash::make($request->password),
         ]);
+
+
 
         event(new Registered($user));
 

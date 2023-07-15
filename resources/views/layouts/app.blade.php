@@ -176,10 +176,10 @@
                     </a>
 
 
-                    <a href="#">
+                    <a href="{{ route('student.index', 'Pending') }}">
                         <li
                             class="text-xl font-medium mt-2  p-2  flex items-center dark:text-gray-100 gap-2   hover:bg-gradient-to-r hover:from-[#1650d0] hover:to-[#264381]  hover:text-white  hover:rounded-md hover:shadow-md hover:shadow-blue-200 hover:dark:shadow-gray-600  @if (request()->routeIs('student.*')) bg-gradient-to-r from-[#1650d0] to-[#264381] text-white  rounded-md shadow-md shadow-blue-200 dark:shadow-gray-600 @endif">
-                            <i class="ri-team-fill text-2xl"></i>
+                            <i class="ri-user-2-fill text-2xl"></i>
                             <span class="text-sm font-thin">Students</span>
                         </li>
                     </a>

@@ -50,7 +50,7 @@
                         Register 😊</h1>
                 </div>
 
-                <form method="POST" action="{{ route('register') }}">
+                <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                     @csrf
 
                     <div class="grid lg:grid-cols-2 gap-2">

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\TeacherController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,11 @@ Route::middleware('auth')->group(function () {
     // Teacher 
     Route::resource('teacher', TeacherController::class);
     Route::post('teacher/delete', [TeacherController::class, 'delete'])->name('teacher.delete');
+
+    // Student
+    Route::get('student/{status}', [StudentController::class, 'index'])->name('student.index');
+    Route::post('student/delete', [StudentController::class, 'delete'])->name('student.delete');
+    Route::post('student/status', [StudentController::class, 'status'])->name('student.status');
 });
 
 require __DIR__ . '/auth.php';

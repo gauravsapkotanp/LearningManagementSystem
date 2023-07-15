@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('images/light-logo.png') }}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lato&family=Philosopher&display=swap');
@@ -96,7 +100,7 @@
 
 
                 <div class="mt-2">
-                    <p class=" text-center">
+                    <p class="text-center">
                         <span>Don't have an account?</span>
 
                         <a href="{{ route('register') }}" class="text-[#f07d00]">Register Now</a>
