@@ -54,7 +54,8 @@
                         <td class="py-2  border border-gray-300 px-2">{{ $student->address }}</td>
                         <td class="py-2  border border-gray-300 px-2">{{ $student->faculty }}</td>
                         <td class="py-2  border border-gray-300 px-2">
-                            <img class="w-16" src="{{ asset('img/profiles/' . $student->profile_photo) }}" alt="">
+                            <img class="w-10 mx-auto" src="{{ asset('img/profiles/' . $student->profile_photo) }}"
+                                alt="">
                         </td>
                         <td class="py-2  border border-gray-300 px-2">{{ $student->status }}</td>
 
