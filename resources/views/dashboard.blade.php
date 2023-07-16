@@ -9,7 +9,7 @@
 
 @extends('layouts.app')
 @section('content')
-    <div class="pt-12 lg:pt-0 px-4 bg-[#1650d0] pb-40 dark:bg-[#051139] dark:text-gray-100">
+    <div class="pt-12 lg:pt-0 px-4 bg-[#1650d0] pb-40 dark:bg-[#051139]  dark:text-gray-100">
         <h1 class="text-lg font-thin text-white dark:text-gray-100 pt-12 pl-4">DASHBOARD</h1>
     </div>
 

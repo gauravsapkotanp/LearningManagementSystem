@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="pt-12 lg:pt-0 px-4 bg-[#1650d0] pb-36 dark:bg-[#051139]">
+    <div class="pt-12 lg:pt-0 px-4 bg-[#1650d0] rounded-b-3xl pb-36 dark:bg-[#051139]">
         <h1 class="text-lg font-thin text-white  pt-12 lg:pl-4 uppercase">Students</h1>
         <div class="mt-6 flex items-center gap-2 justify-end">
             <a href="{{ route('student.index', 'Pending') }}"
